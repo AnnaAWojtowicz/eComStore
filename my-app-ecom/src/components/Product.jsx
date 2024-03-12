@@ -1,4 +1,5 @@
 import React from "react";
+const apiUrl = "https://v2.api.noroff.dev/online-shop";
 
 function Product(props) {
     return (
