@@ -1,17 +1,17 @@
 import React from "react";
-const apiUrl = "https://v2.api.noroff.dev/online-shop";
+import Price from "./Price";
+
 
 function Product(props) {
     return (
         <div>
             <h1>{props.title}</h1>
-            <p>{props.description}</p>
-            <p>{props.price}</p>
-            <p>{props.discountedPrice}</p>
-            <p>{props.image}</p>
-            <p>{props.rating}</p>
-            <p>{props.tags}</p>
-            <p>{props.reviews}</p>
+            <div>{props.description}</div>
+            <Price price={props.price} discountedPrice={props.discountedPrice} />
+            <div>{props.image}</div>
+            <div>{props.rating}</div>
+            <div>{props.tags}</div>
+            <div>{props.reviews}</div>
         </div>
     );
 }
