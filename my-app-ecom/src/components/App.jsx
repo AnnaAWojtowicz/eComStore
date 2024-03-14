@@ -29,7 +29,7 @@ function App() {
   return (
     <div>
       <Header />
-      <div className=''>
+      <div className='container'>
         {productsData.map(item => (
           <Product className="card"
             key={item.id}
@@ -37,14 +37,13 @@ function App() {
             description={item.description}
             price={item.price}
             discountedPrice={item.discountedPrice}
-            // image={item.image}
-            rating={item.rating}
-            tags={item.tags}
+          // image={item.image}
+          // rating={item.rating}
+          // tags={item.tags}
           //reviews={item.reviews}
           />
-
-        )
-        )}
+        ))
+        }
       </div>
       <Footer />
     </div>
