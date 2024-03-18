@@ -77,6 +77,14 @@ footer {
   bottom: 0;
   width: 100%;
   height: 2rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.footerLogo {
+  font-size: 2rem;
+  color: #037f8c;
 }
 
 .container {
@@ -130,4 +138,34 @@ button {
 .button:hover {
   background-color: red;
   color: #36b1bf;
+}
+
+.form {
+  position: relative;
+  padding: 20px 0;
+}
+
+.form input {
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  color: #037f8c;
+  text-align: center;
+  width: 250px;
+  padding: 10px 15px;
+  margin: 0 auto 10px auto;
+  background-color: #ebffff;
+  border: 1px solid #037f8c;
+  border-radius: 4px;
+  display: block;
+}
+
+form button {
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  color: #f272a1;
+  border: 1px solid #f272a1;
+  background-color: #ebffff;
+  text-align: center;
+  width: 250px;
+  padding: 10px 15px;
 }
