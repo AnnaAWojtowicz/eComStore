@@ -1,8 +1,9 @@
 import React from 'react';
-import Header from './Header';
-import Footer from './Footer';
-import Product from './Product';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Header from './layout/Header';
+import Footer from './layout/Footer';
 import { getProducts } from '../api';
+import Home from './Home';
 
 const products = await getProducts()
 const productsData = products.data;
@@ -27,26 +28,13 @@ const productsData = products.data;
 function App() {
 
   return (
-    <div>
-      <Header />
-      <div className='container'>
-        {productsData.map(item => (
-          <Product className="card"
-            key={item.id}
-            title={item.title}
-            description={item.description}
-            price={item.price}
-            discountedPrice={item.discountedPrice}
-          // image={item.image}
-          // rating={item.rating}
-          // tags={item.tags}
-          //reviews={item.reviews}
-          />
-        ))
-        }
-      </div>
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Header />} />
+        <Route index element={<Home />} />
+        <Route path="/" element={<Footer />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

@@ -1,6 +1,7 @@
 import React from "react";
 
 function Header() {
+    const count = 0;
     return (
         <header className="header">
             <div className="bungee-outline-regular">Ecom</div>
@@ -10,7 +11,7 @@ function Header() {
             </div>
             <div className="CartAndNumber">
                 <span className="material-symbols-outlined exceptionIcon">shopping_bag</span>
-                <span className="numberOfItems">6</span>
+                <span className="numberOfItems">{count}</span>
             </div>
         </header>
     );
