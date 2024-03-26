@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Header from './layout/Header';
+import Header from './layout/Layout';
 import Footer from './layout/Footer';
 import { getProducts } from '../api';
 import Home from './Home';
 
 const products = await getProducts()
 const productsData = products.data;
+
+const url = "https://v2.api.noroff.dev/online-shop";
 
 // function createCard(item) {
 //   return (
@@ -26,15 +28,23 @@ const productsData = products.data;
 // }
 
 function App() {
-
+  const [products, setProducts] = useState([]);
+  useEffect(() => {
+    async function fetchProducts() {
+      const response = await fetch(url);
+      const fetchedProducts = await response.json();
+      setProducts(fetchedProducts);
+    }
+    fetchProducts();
+  }, []);
   return (
     <BrowserRouter>
+      <Header />
       <Routes>
-        <Route path="/" element={<Header />} />
-        <Route index element={<Home />} />
-        <Route path="/" element={<Footer />} />
+        <Route path="/" element={<Home />} />
       </Routes>
-    </BrowserRouter>
+      <Footer />
+    </BrowserRouter >
   );
 }
 

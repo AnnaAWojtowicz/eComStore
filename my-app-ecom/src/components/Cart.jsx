@@ -4,6 +4,8 @@ import Price from './Price';
 import Product from './Product';
 import Button from './Button';
 
+// jeg tror jeg trenger å bruke useState her for å kunne legge til produkter i handlekurven - sjekk Angelas kurs no 304 
+
 function Cart(props) {
     const totalPrice = props.items.reduce((total, item) => total + (item.discountedPrice || item.price), 0);
     return (

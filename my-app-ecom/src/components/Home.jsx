@@ -1,12 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Product from "./Product";
-import productsData from "../data/productsData";
+//import productsData from "../data/productsData";
 import { getProducts } from '../api';
 
-const products = await getProducts()
-productsData = products.data;
+// const products = await getProducts()
+// productsData = products.data;
 
 function Home() {
+    const [productsData, setProductsData] = useState([]);
+    useEffect(() => {
+        const fetchProducts = async () => {
+            const products = await getProducts();
+            setProductsData(products.data);
+        };
+        fetchProducts();
+    }, []);
+
     return (
         <div className='container'>
             {productsData.map(item => (
@@ -14,6 +23,7 @@ function Home() {
                     key={item.id}
                     title={item.title}
                     description={item.description}
+                    image={item.image}
                     price={item.price}
                     discountedPrice={item.discountedPrice}
                 // image={item.image}

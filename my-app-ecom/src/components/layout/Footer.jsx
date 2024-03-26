@@ -6,7 +6,7 @@ function Footer() {
         <footer className="footer">
             <div className="bungee-outline-regular footerLogo">Ecom</div>
             <p>Copywright {year}</p>
-            <div><button onClick={ }>Contact </button></div>
+            <div><button>Contact </button></div>
         </footer>
     );
 }

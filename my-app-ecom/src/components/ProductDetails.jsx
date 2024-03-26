@@ -2,6 +2,7 @@ import React from "react";
 import Price from "./Price";
 import Product from "./Product";
 import Button from "./Button";
+import { handleClick } from "./ProductDetails";
 
 
 function ProductDetails(props) {
@@ -14,7 +15,7 @@ function ProductDetails(props) {
             <div>{props.rating}</div>
             <div>{props.tags}</div>
             <div>{props.reviews}</div>
-            <Button type="submit" name="Add to cart" />
+            <Button type="submit" name="Add to cart" onClick={props.handleClick} />
         </div>
     );
 }

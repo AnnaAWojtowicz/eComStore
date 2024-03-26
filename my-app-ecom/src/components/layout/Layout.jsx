@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
+import { Outlet, Link } from "react-router-dom";
+import ProductDetails from "../ProductDetails";
+
+
 
 function Header() {
-    const count = 0;
+    let [count, setCount] = useState(0);
+    function handleClick() {
+        setCount(count + 1);
+    }
     return (
         <header className="header">
-            <div className="bungee-outline-regular">Ecom</div>
+            <div className="bungee-outline-regular"><Link className="link" to="/">Ecom</Link></div>
             <div className="searchContainer">
                 <input type="text" className="searchInput" placeholder="Search">
                 </input>
@@ -12,7 +19,9 @@ function Header() {
             <div className="CartAndNumber">
                 <span className="material-symbols-outlined exceptionIcon">shopping_bag</span>
                 <span className="numberOfItems">{count}</span>
+                <ProductDetails handleClick={handleClick} />
             </div>
+            <Outlet />
         </header>
     );
 }
