@@ -26,6 +26,9 @@ function Home() {
                     image={product.image}
                     price={product.price}
                     discountedPrice={product.discountedPrice}
+                    rating={product.rating}
+                    tags={product.tags}
+                    reviews={product.reviews}
                 />
             ))}
         </div>

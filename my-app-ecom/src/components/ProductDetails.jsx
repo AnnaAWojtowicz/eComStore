@@ -16,27 +16,32 @@ function ProductDetails({ products }) {
         if (products && products.data) {
 
             const productArray = products.data;
-            const foundProduct = productArray.find((product) => product.id === Number(id));
+            const foundProduct = productArray.find((product) => product.id === id);
 
             setProduct(foundProduct);
         }
-    }, [id, products]);
+    });
 
     if (!product) {
         return <div>Loading...</div>;
     }
 
     const { url, alt } = product.image;
+    const { } = product.tags;
+    const [user] = product.reviews;
+    const { username, description, rating } = user;
+
     return (
         <div className="card">
             <h1 className="title">{product.title}</h1>
-            <img src={url} alt={alt} />
             <div>{product.description}</div>
+            <img src={url} alt={alt} />
             <Price price={product.price} discountedPrice={product.discountedPrice} />
-
-          //  <div>{product.rating}</div>
-           // <div>{product.tags}</div>
-           // <div>{product.reviews}</div>
+            <div>{product.rating}</div>
+            <div>{product.tags}</div>
+            <div>{username}</div>
+            <div>{description}</div>
+            <div>{rating}</div>
             <Button type="submit" name="Add to cart" onClick={product.handleClick} />
         </div>
     );

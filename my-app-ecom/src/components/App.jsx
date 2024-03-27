@@ -46,7 +46,7 @@ function App() {
         <Route path="/ProductDetails/:id" element={<ProductDetails products={products} />} />
       </Routes>
       <Footer />
-    </BrowserRouter >
+    </BrowserRouter>
   );
 }
 
