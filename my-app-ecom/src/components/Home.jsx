@@ -18,18 +18,14 @@ function Home() {
 
     return (
         <div className='container'>
-            {productsData.map(item => (
-                <Product className="card"
-                    key={item.id}
-                    title={item.title}
-                    description={item.description}
-                    image={item.image}
-                    price={item.price}
-                    discountedPrice={item.discountedPrice}
-                // image={item.image}
-                // rating={item.rating}
-                // tags={item.tags}
-                //reviews={item.reviews}
+            {productsData.map(product => (
+                <Product id={product.id} className="card"
+                    key={product.id}
+                    title={product.title}
+                    description={product.description}
+                    image={product.image}
+                    price={product.price}
+                    discountedPrice={product.discountedPrice}
                 />
             ))}
         </div>

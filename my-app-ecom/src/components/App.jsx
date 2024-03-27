@@ -4,6 +4,7 @@ import Header from './layout/Layout';
 import Footer from './layout/Footer';
 import { getProducts } from '../api';
 import Home from './Home';
+import ProductDetails from './ProductDetails';
 
 const products = await getProducts()
 const productsData = products.data;
@@ -41,7 +42,8 @@ function App() {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home />} index />
+        <Route path="/ProductDetails/:id" element={<ProductDetails products={products} />} />
       </Routes>
       <Footer />
     </BrowserRouter >
