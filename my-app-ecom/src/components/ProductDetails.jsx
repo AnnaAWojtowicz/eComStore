@@ -4,6 +4,7 @@ import Price from "./Price";
 import Product from "./Product";
 import Button from "./Button";
 import { handleClick } from "./ProductDetails";
+import Review from "./Review";
 
 
 
@@ -27,22 +28,23 @@ function ProductDetails({ products }) {
     }
 
     const { url, alt } = product.image;
-    const { } = product.tags;
-    const [user] = product.reviews;
-    const { username, description, rating } = user;
+    const tags = product.tags;
 
     return (
-        <div className="card">
-            <h1 className="title">{product.title}</h1>
-            <div>{product.description}</div>
-            <img src={url} alt={alt} />
-            <Price price={product.price} discountedPrice={product.discountedPrice} />
-            <div>{product.rating}</div>
-            <div>{product.tags}</div>
-            <div>{username}</div>
-            <div>{description}</div>
-            <div>{rating}</div>
-            <Button type="submit" name="Add to cart" onClick={product.handleClick} />
+        <div className='container'>
+            <div className="card2">
+                <h1 className="title">{product.title}</h1>
+                <div>{product.description}</div>
+                <img src={url} alt={alt} />
+                <Price price={product.price} discountedPrice={product.discountedPrice} />
+                <div>{product.rating}</div>
+                <div>{tags}</div>
+                {product.reviews && product.reviews.map(({ id, username, description, rating }) => {
+                    return <Review key={id} username={username} description={description} rating={rating} />
+                })
+                }
+                <Button type="submit" name="Add to cart" onClick={product.handleClick} />
+            </div>
         </div>
     );
 }
