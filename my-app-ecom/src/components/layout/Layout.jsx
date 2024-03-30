@@ -4,11 +4,9 @@ import ProductDetails from "../ProductDetails";
 
 
 
-function Header() {
-    let [count, setCount] = useState(0);
-    function handleClick() {
-        setCount(count + 1);
-    }
+function Header({ cart }) {
+    const count = cart.length;
+
     return (
         <header className="header">
             <div className="bungee-outline-regular"><Link className="link" to="/">Ecom</Link></div>
@@ -19,7 +17,7 @@ function Header() {
             <Link className="link" to="/cart">
                 <div className="CartAndNumber">
                     <span className="material-symbols-outlined exceptionIcon">shopping_bag</span>
-                    <span className="numberOfItems">{count}</span>
+                    <span className="numberOfItems">{cart.length}</span>
                 </div>
             </Link>
             <Outlet />

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import CartContext from './CartContext';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './layout/Layout';
 import Footer from './layout/Footer';
@@ -6,6 +7,7 @@ import { getProducts } from '../api';
 import Home from './Home';
 import ProductDetails from './ProductDetails';
 import Cart from './Cart';
+import CartItem from './CartItem';
 
 const products = await getProducts()
 const productsData = products.data;
@@ -30,6 +32,10 @@ const url = "https://v2.api.noroff.dev/online-shop";
 // }
 
 function App() {
+
+  const [cart, setCart] = useState([]);
+
+
   const [products, setProducts] = useState([]);
   useEffect(() => {
     async function fetchProducts() {
@@ -39,16 +45,23 @@ function App() {
     }
     fetchProducts();
   }, []);
+
+
+
+
   return (
-    <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} index />
-        <Route path="/ProductDetails/:id" element={<ProductDetails products={products} />} />
-        <Route path="/cart" element={<Cart />} />
-      </Routes>
-      <Footer />
-    </BrowserRouter>
+    <CartContext.Provider value={{ cart, setCart }}>
+      <BrowserRouter>
+        <Header cart={cart} />
+        <Routes>
+          <Route path="/" element={<Home />} index />
+          <Route path="/ProductDetails/:id" element={<ProductDetails products={products} />} />
+          <Route path='/cartItem' element={<CartItem />} />
+          <Route path="/cart" element={<Cart key={cart.length} items={cart} />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    </CartContext.Provider>
   );
 }
 
