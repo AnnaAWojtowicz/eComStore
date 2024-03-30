@@ -5,6 +5,7 @@ import Footer from './layout/Footer';
 import { getProducts } from '../api';
 import Home from './Home';
 import ProductDetails from './ProductDetails';
+import Cart from './Cart';
 
 const products = await getProducts()
 const productsData = products.data;
@@ -44,6 +45,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} index />
         <Route path="/ProductDetails/:id" element={<ProductDetails products={products} />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
       <Footer />
     </BrowserRouter>

@@ -13,12 +13,9 @@ function ProductDetails({ products }) {
     const [product, setProduct] = useState(null);
 
     useEffect(() => {
-
         if (products && products.data) {
-
             const productArray = products.data;
             const foundProduct = productArray.find((product) => product.id === id);
-
             setProduct(foundProduct);
         }
     });
@@ -34,7 +31,7 @@ function ProductDetails({ products }) {
         <div className='container'>
             <div className="card2">
                 <h1 className="title">{product.title}</h1>
-                <div>{product.description}</div>
+                <div className="productDescription">{product.description}</div>
                 <img src={url} alt={alt} />
                 <Price price={product.price} discountedPrice={product.discountedPrice} />
                 <div>{product.rating}</div>

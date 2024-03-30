@@ -12,9 +12,8 @@ function Product(props) {
         <div className="card">
             <h1 className="title">{props.title}</h1>
             <img src={url} alt={alt} />
-            <div>{props.description}</div>
+            <div className="productDescription">{props.description}</div>
             <Price price={props.price} discountedPrice={props.discountedPrice} />
-
             <Link to={`/ProductDetails/${props.id}`}><Button type="button" name="More" /></Link>
         </div>
     );

@@ -16,11 +16,12 @@ function Header() {
                 <input type="text" className="searchInput" placeholder="Search">
                 </input>
             </div>
-            <div className="CartAndNumber">
-                <span className="material-symbols-outlined exceptionIcon">shopping_bag</span>
-                <span className="numberOfItems">{count}</span>
-                <ProductDetails handleClick={handleClick} />
-            </div>
+            <Link className="link" to="/cart">
+                <div className="CartAndNumber">
+                    <span className="material-symbols-outlined exceptionIcon">shopping_bag</span>
+                    <span className="numberOfItems">{count}</span>
+                </div>
+            </Link>
             <Outlet />
         </header>
     );

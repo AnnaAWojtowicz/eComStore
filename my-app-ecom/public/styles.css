@@ -209,10 +209,20 @@ img {
   width: 100%;
   height: 200px;
   object-fit: cover;
+  border: 1px solid #037f8c;
+  border-radius: 4px;
 }
 
 .card2 img {
   width: 100%;
   height: 400px;
   object-fit: cover;
+}
+
+.productDescription {
+  padding: 1rem 0;
+}
+
+.reviewDescription {
+  font-style: italic;
 }
