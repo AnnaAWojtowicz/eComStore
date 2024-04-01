@@ -10,7 +10,7 @@ function Product(props) {
     const { url, alt } = props.image;
     return (
         <div className="card">
-            <h1 className="title">{props.title}</h1>
+            <div className="title">{props.title}</div>
             <img src={url} alt={alt} />
             <div className="productDescription">{props.description}</div>
             <Price price={props.price} discountedPrice={props.discountedPrice} />

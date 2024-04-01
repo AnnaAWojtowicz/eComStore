@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import CartContext from "./CartContext";
 import Price from "./Price";
 import Product from "./Product";
@@ -40,7 +40,7 @@ function ProductDetails({ products }) {
     return (
         <div className='container'>
             <div className="card2">
-                <h1 className="title">{product.title}</h1>
+                <div className="title">{product.title}</div>
                 <div className="productDescription">{product.description}</div>
                 <img src={url} alt={alt} />
                 <Price price={product.price} discountedPrice={product.discountedPrice} />
@@ -50,7 +50,11 @@ function ProductDetails({ products }) {
                     return <Review key={id} username={username} description={description} rating={rating} />
                 })
                 }
-                <Button type="button" name="Add to cart" onClick={addToCart} />
+                <div className='buttons'>
+                    <Link to="/"><Button type="button" name="Go back" /></Link>
+                    <Button type="button" name="Add to cart" onClick={addToCart} />
+                </div>
+
             </div>
         </div>
     );

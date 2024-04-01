@@ -7,7 +7,7 @@ function Price(props) {
                 (<div className="priceElement">
                     <div className="price">
                         <span><s>{props.price}</s></span>
-                        <span><span class="material-symbols-outlined">
+                        <span className="discount"><span class="material-symbols-outlined">
                             sell
                         </span>Discount {Math.ceil(((props.price - props.discountedPrice) / props.price) * 100)}%</span>
                     </div>
