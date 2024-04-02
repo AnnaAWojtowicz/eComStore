@@ -14,7 +14,7 @@ function Product(props) {
             <img src={url} alt={alt} />
             <div className="productDescription">{props.description}</div>
             <Price price={props.price} discountedPrice={props.discountedPrice} showDiscount />
-            <Link to={`/ProductDetails/${props.id}`}><Button type="button" name="More" /></Link>
+            <Link className="oneButtonLink" to={`/ProductDetails/${props.id}`}><Button className="oneButton" type="button" name="More" /></Link>
         </div>
     );
 }

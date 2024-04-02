@@ -8,6 +8,7 @@ import Home from './Home';
 import ProductDetails from './ProductDetails';
 import Cart from './Cart';
 import CartItem from './CartItem';
+import CheckOutSuccess from './CheckOutSuccess';
 
 const products = await getProducts()
 const productsData = products.data;
@@ -58,6 +59,7 @@ function App() {
           <Route path="/ProductDetails/:id" element={<ProductDetails products={products} />} />
           <Route path='/cartItem' element={<CartItem />} />
           <Route path="/cart" element={<Cart key={cart.length} items={cart} />} />
+          <Route path="/checkout" element={<CheckOutSuccess />} />
         </Routes>
         <Footer />
       </BrowserRouter>

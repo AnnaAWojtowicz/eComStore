@@ -4,6 +4,7 @@ import CartItem from './CartItem';
 import Price from './Price';
 import Product from './Product';
 import Button from './Button';
+import CheckOutForm from './CheckOutSuccess';
 
 
 
@@ -20,7 +21,7 @@ function Cart({ items }) {
                 <div className="priceTotal">Total: ${(totalPrice).toFixed(2)}</div>
                 <div className='buttons'>
                     <Link to="/"><Button type="button" name="Go back" /></Link>
-                    <Button type="submit" name="Checkout" />
+                    <Link to="/checkout"> <Button type="submit" name="Checkout" /></Link>
                 </div>
             </div>
         </div>

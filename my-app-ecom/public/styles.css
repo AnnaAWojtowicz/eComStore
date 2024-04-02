@@ -215,6 +215,16 @@ button {
   align-self: flex-end;
 }
 
+.oneButtonLink {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.oneButton {
+  align-self: center;
+}
+
 .button:hover {
   background-color: red;
   color: #36b1bf;
@@ -242,17 +252,6 @@ button {
   border: 1px solid #037f8c;
   border-radius: 4px;
   display: block;
-}
-
-form button {
-  font-family: "Montserrat", sans-serif;
-  font-size: 18px;
-  color: #f272a1;
-  border: 1px solid #f272a1;
-  background-color: #ebffff;
-  text-align: center;
-  width: 250px;
-  padding: 10px 15px;
 }
 
 .link {
