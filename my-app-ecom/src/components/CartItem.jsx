@@ -3,9 +3,9 @@ import Price from './Price';
 
 function CartItem(props) {
     return (
-        <div>
-            <h2>{props.title}</h2>
-            <p><Price price={props.price} discountedPrice={props.discountedPrice} /></p>
+        <div className='titleAndPriceCart'>
+            <h3>{props.title}</h3>
+            <span><Price price={props.price} discountedPrice={props.discountedPrice} /></span>
         </div>
     );
 }

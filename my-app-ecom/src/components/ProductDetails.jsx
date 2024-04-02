@@ -43,7 +43,7 @@ function ProductDetails({ products }) {
                 <div className="title">{product.title}</div>
                 <div className="productDescription">{product.description}</div>
                 <img src={url} alt={alt} />
-                <Price price={product.price} discountedPrice={product.discountedPrice} />
+                <Price price={product.price} discountedPrice={product.discountedPrice} showDiscount />
                 <div>{product.rating}</div>
                 <div>{tags.join(", ")}</div>
                 {product.reviews && product.reviews.map(({ id, username, description, rating }) => {

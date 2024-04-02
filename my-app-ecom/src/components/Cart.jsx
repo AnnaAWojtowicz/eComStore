@@ -17,7 +17,7 @@ function Cart({ items }) {
                 <h1>Your cart</h1>
                 {items.map(item => (
                     <div className='cart'><CartItem key={item.id} title={item.title} price={item.price} discountedPrice={item.discountedPrice} /></div>))}
-                <div>Total: {totalPrice}</div>
+                <div className="priceTotal">Total: ${(totalPrice).toFixed(2)}</div>
                 <div className='buttons'>
                     <Link to="/"><Button type="button" name="Go back" /></Link>
                     <Button type="submit" name="Checkout" />
