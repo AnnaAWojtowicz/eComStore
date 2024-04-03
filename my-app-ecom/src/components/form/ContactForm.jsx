@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Input from "./Input";
 import Button from "../Button";
 
@@ -18,7 +18,11 @@ function ContactForm() {
                     <Input placeholder="Email" type="email" id="email" name="email" />
                     <Input placeholder="Subject" type="text" id="subject" name="subject" validate />
                     <Input placeholder="Message" type="textarea" id="message" name="message" validate />
-                    <Button className="oneButton2" type="submit" name="Send" />
+
+                    <div className='buttons'>
+                        <Link to="/"><Button type="button" name="Go back" /></Link>
+                        <Button type="button" type="submit" name="Send" />
+                    </div>
                 </form>
             </div>
         </div>
