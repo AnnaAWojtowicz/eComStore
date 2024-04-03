@@ -259,6 +259,10 @@ button {
   align-self: center;
 }
 
+.oneButton2 {
+  margin: auto;
+}
+
 .button:hover {
   background-color: red;
   color: #36b1bf;
@@ -279,13 +283,33 @@ button {
   font-size: 18px;
   color: #037f8c;
   text-align: center;
-  width: 250px;
+  width: 350px;
   padding: 10px 15px;
   margin: 0 auto 10px auto;
   background-color: #ebffff;
   border: 1px solid #037f8c;
   border-radius: 4px;
   display: block;
+}
+
+textarea {
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  color: #037f8c;
+  text-align: center;
+  width: 350px;
+  padding: 10px 15px;
+  margin: 0 auto 10px auto;
+  background-color: #ebffff;
+  border: 1px solid #037f8c;
+  border-radius: 4px;
+  display: block;
+  resize: vertical;
+}
+
+.form input::placeholder,
+textarea::placeholder {
+  color: #037f8c;
 }
 
 .link {

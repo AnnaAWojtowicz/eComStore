@@ -1,17 +1,26 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Input from "./Input";
 import Button from "../Button";
 
 function ContactForm() {
+    const navigate = useNavigate();
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        navigate("/");
+    };
     return (
-        <div>
-            <form className="form">
-                <Input label="Name" type="text" id="name" name="name" />
-                <Input label="Email" type="text" id="email" name="email" />
-                <Input label="Message" type="textarea" id="message" name="message" />
-                <Link to="/"> <Button type="submit" name="Send" /></Link>
-            </form>
+        <div className="container">
+            <div className="card2">
+                <h1>Have a question?</h1>
+                <form className="form" onSubmit={handleSubmit}>
+                    <Input placeholder="Name" type="text" id="name" name="name" validate />
+                    <Input placeholder="Email" type="email" id="email" name="email" />
+                    <Input placeholder="Subject" type="text" id="subject" name="subject" validate />
+                    <Input placeholder="Message" type="textarea" id="message" name="message" validate />
+                    <Button className="oneButton2" type="submit" name="Send" />
+                </form>
+            </div>
         </div>
     );
 }
