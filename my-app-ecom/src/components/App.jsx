@@ -9,6 +9,7 @@ import ProductDetails from './ProductDetails';
 import Cart from './Cart';
 import CartItem from './CartItem';
 import CheckOutSuccess from './CheckOutSuccess';
+import ContactForm from './form/ContactForm';
 
 const products = await getProducts()
 const productsData = products.data;
@@ -53,14 +54,17 @@ function App() {
   return (
     <CartContext.Provider value={{ cart, setCart }}>
       <BrowserRouter>
-        <Header cart={cart} />
-        <Routes>
-          <Route path="/" element={<Home />} index />
-          <Route path="/ProductDetails/:id" element={<ProductDetails products={products} />} />
-          <Route path='/cartItem' element={<CartItem />} />
-          <Route path="/cart" element={<Cart key={cart.length} items={cart} />} />
-          <Route path="/checkout" element={<CheckOutSuccess />} />
-        </Routes>
+        <div className="content">
+          <Header cart={cart} />
+          <Routes>
+            <Route path="/" element={<Home />} index />
+            <Route path="/ProductDetails/:id" element={<ProductDetails products={products} />} />
+            <Route path='/cartItem' element={<CartItem />} />
+            <Route path="/cart" element={<Cart key={cart.length} items={cart} />} />
+            <Route path="/checkout" element={<CheckOutSuccess />} />
+            <Route path="/contact" element={<ContactForm />} />
+          </Routes>
+        </div>
         <Footer />
       </BrowserRouter>
     </CartContext.Provider>

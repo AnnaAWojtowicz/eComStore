@@ -1,16 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Input from "./Input";
-import Button from "./Button";
+import Button from "../Button";
 
 function ContactForm() {
     return (
         <div>
             <form className="form">
-
                 <Input label="Name" type="text" id="name" name="name" />
                 <Input label="Email" type="text" id="email" name="email" />
                 <Input label="Message" type="textarea" id="message" name="message" />
-                <Button type="submit" name="Submit" />
+                <Link to="/"> <Button type="submit" name="Send" /></Link>
             </form>
         </div>
     );
