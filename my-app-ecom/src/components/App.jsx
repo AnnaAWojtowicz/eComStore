@@ -10,6 +10,8 @@ import Cart from './Cart';
 import CartItem from './CartItem';
 import CheckOutSuccess from './CheckOutSuccess';
 import ContactForm from './form/ContactForm';
+import ContactSuccess from './ContactSuccess';
+import Success from './Success';
 
 const products = await getProducts()
 const productsData = products.data;
@@ -63,6 +65,8 @@ function App() {
             <Route path="/cart" element={<Cart key={cart.length} items={cart} />} />
             <Route path="/checkout" element={<CheckOutSuccess />} />
             <Route path="/contact" element={<ContactForm />} />
+            <Route path="/success" element={<Success />} />
+            <Route path="/contactSuccess" element={<ContactSuccess />} />
           </Routes>
         </div>
         <Footer />

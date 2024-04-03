@@ -7,7 +7,7 @@ function ContactForm() {
     const navigate = useNavigate();
     const handleSubmit = (event) => {
         event.preventDefault();
-        navigate("/");
+        navigate("/contactSuccess");
     };
     return (
         <div className="container">
