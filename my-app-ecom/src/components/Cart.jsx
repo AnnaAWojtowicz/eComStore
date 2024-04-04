@@ -13,7 +13,7 @@ import CheckOutForm from './CheckOutSuccess';
 function Cart({ items }) {
     const totalPrice = items.reduce((total, item) => total + (item.discountedPrice || item.price), 0);
     return (
-        <div className='container'>
+        <div className='container2'>
             <div className="card4">
                 <h1>Your cart</h1>
                 {items.map(item => (

@@ -4,8 +4,6 @@ import Price from "./Price";
 import Button from "./Button";
 
 
-
-
 function Product(props) {
     const { url, alt } = props.image;
     return (

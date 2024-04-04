@@ -6,8 +6,10 @@ import { getProducts } from '../api';
 // const products = await getProducts()
 // productsData = products.data;
 
-function Home() {
+function Home({ products, isSearching, filteredObjects }) {
+
     const [productsData, setProductsData] = useState([]);
+    const itemsToDisplay = isSearching ? filteredObjects : productsData;
     useEffect(() => {
         const fetchProducts = async () => {
             const products = await getProducts();
@@ -16,19 +18,20 @@ function Home() {
         fetchProducts();
     }, []);
 
+
     return (
         <div className='container'>
-            {productsData.map(product => (
-                <Product id={product.id} className="card"
-                    key={product.id}
-                    title={product.title}
-                    description={product.description}
-                    image={product.image}
-                    price={product.price}
-                    discountedPrice={product.discountedPrice}
-                    rating={product.rating}
-                    tags={product.tags}
-                    reviews={product.reviews}
+            {itemsToDisplay.map((item) => (
+                <Product id={item.id} className="card"
+                    key={item.id}
+                    title={item.title}
+                    description={item.description}
+                    image={item.image}
+                    price={item.price}
+                    discountedPrice={item.discountedPrice}
+                    rating={item.rating}
+                    tags={item.tags}
+                    reviews={item.reviews}
                 />
             ))}
         </div>

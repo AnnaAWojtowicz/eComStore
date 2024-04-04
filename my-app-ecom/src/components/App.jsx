@@ -38,7 +38,9 @@ const url = "https://v2.api.noroff.dev/online-shop";
 function App() {
 
   const [cart, setCart] = useState([]);
-
+  const [objects, setObjects] = useState([]);
+  const [filteredObjects, setFilteredObjects] = useState(objects);
+  const [isSearching, setIsSearching] = useState(false);
 
   const [products, setProducts] = useState([]);
   useEffect(() => {
@@ -57,9 +59,9 @@ function App() {
     <CartContext.Provider value={{ cart, setCart }}>
       <BrowserRouter>
         <div className="content">
-          <Header cart={cart} />
+          <Header cart={cart} objects={objects} productsData={productsData} setFilteredObjects={setFilteredObjects} />
           <Routes>
-            <Route path="/" element={<Home />} index />
+            <Route path="/" element={<Home products={productsData} isSearching={isSearching} filteredObjects={filteredObjects} />} index />
             <Route path="/ProductDetails/:id" element={<ProductDetails products={products} />} />
             <Route path='/cartItem' element={<CartItem />} />
             <Route path="/cart" element={<Cart key={cart.length} items={cart} />} />
