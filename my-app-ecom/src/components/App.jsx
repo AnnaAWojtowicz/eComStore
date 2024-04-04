@@ -42,6 +42,7 @@ function App() {
   const [filteredObjects, setFilteredObjects] = useState(objects);
   const [isSearching, setIsSearching] = useState(false);
 
+
   const [products, setProducts] = useState([]);
   useEffect(() => {
     async function fetchProducts() {
@@ -56,7 +57,7 @@ function App() {
 
 
   return (
-    <CartContext.Provider value={{ cart, setCart }}>
+    <CartContext.Provider value={{ cart, setCart, filteredObjects, setFilteredObjects }}>
       <BrowserRouter>
         <div className="content">
           <Header cart={cart} objects={objects} productsData={productsData} setFilteredObjects={setFilteredObjects} />

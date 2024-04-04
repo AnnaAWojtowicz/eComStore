@@ -9,7 +9,7 @@ import { getProducts } from '../api';
 function Home({ products, isSearching, filteredObjects }) {
 
     const [productsData, setProductsData] = useState([]);
-    const itemsToDisplay = isSearching ? filteredObjects : productsData;
+
     useEffect(() => {
         const fetchProducts = async () => {
             const products = await getProducts();
@@ -17,6 +17,11 @@ function Home({ products, isSearching, filteredObjects }) {
         };
         fetchProducts();
     }, []);
+
+    let itemsToDisplay = productsData;
+    if (filteredObjects.length > 0) {
+        itemsToDisplay = filteredObjects;
+    }
 
 
     return (

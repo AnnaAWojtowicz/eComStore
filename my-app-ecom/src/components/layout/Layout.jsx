@@ -1,17 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Outlet, Link } from "react-router-dom";
+import CartContext from "../CartContext";
+
 
 
 function Header({ cart, objects, productsData }) {
 
     const [searchTerm, setSearchTerm] = useState("");
-    const [filteredObjects, setFilteredObjects] = useState(objects);
+    // const [filteredObjects, setFilteredObjects] = useState(objects);
     const count = cart.length;
-
-
-
     const [isSearching, setIsSearching] = useState(false);
-
+    const { setFilteredObjects } = useContext(CartContext);
 
     const handleSearch = () => {
 
@@ -31,7 +30,7 @@ function Header({ cart, objects, productsData }) {
         }
     }, [searchTerm]);
 
-    const itemsToDisplay = isSearching ? filteredObjects : productsData;
+    // const itemsToDisplay = isSearching ? filteredObjects : productsData;
 
     return (
         <header className="header">

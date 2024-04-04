@@ -5,11 +5,14 @@ import Success from "./Success";
 import Button from "./Button";
 
 function CheckOutSuccess() {
-    const { setCart } = useContext(CartContext);
-    const clearCart = () => {
+    const { setCart, setFilteredObjects } = useContext(CartContext);
+
+    const clearCartAndSearch = () => {
         setCart([]);
+        setFilteredObjects([]);
     }
-    useEffect(clearCart, []);
+
+    useEffect(clearCartAndSearch, []);
 
     return (
         <div>
