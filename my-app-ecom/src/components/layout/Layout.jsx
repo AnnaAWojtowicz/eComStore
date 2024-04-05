@@ -12,25 +12,36 @@ function Header({ cart, objects, productsData }) {
     const [isSearching, setIsSearching] = useState(false);
     const { setFilteredObjects } = useContext(CartContext);
 
-    const handleSearch = () => {
+    // const handleSearch = () => {
+    //     const results = productsData.filter((product) => {
+    //         return product.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    //             product.description.toLowerCase().includes(searchTerm.toLowerCase());
+    //     });
+    //     setFilteredObjects(results);
+    //     setIsSearching(true);
+    // };
 
-        const results = productsData.filter((product) => {
-            return product.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                product.description.toLowerCase().includes(searchTerm.toLowerCase());
-        });
-        setFilteredObjects(results);
-
-        setIsSearching(true);
-    };
+    // useEffect(() => {
+    //     if (searchTerm === "") {
+    //         setIsSearching(false);
+    //     }
+    // }, [searchTerm]);
 
     useEffect(() => {
-        console.log(isSearching);
         if (searchTerm === "") {
             setIsSearching(false);
+        } else {
+            const results = productsData.filter((product) => {
+                return product.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    product.description.toLowerCase().includes(searchTerm.toLowerCase());
+            });
+            setFilteredObjects(results);
+            setIsSearching(true);
         }
     }, [searchTerm]);
 
-    // const itemsToDisplay = isSearching ? filteredObjects : productsData;
+
+
 
     return (
         <header className="header">
@@ -42,15 +53,15 @@ function Header({ cart, objects, productsData }) {
                     placeholder="Search"
                     value={searchTerm}
                     onChange={(event) => setSearchTerm(event.target.value)} />
-                <button className="searchButton" onClick={handleSearch}><span className="material-symbols-outlined">
+                {/* <button className="searchButton" onClick={handleSearch}><span className="material-symbols-outlined">
                     search
-                </span></button>
+                </span></button> */}
             </div>
 
             <Link className="link" to="/cart">
                 <div className="CartAndNumber">
                     <span className="material-symbols-outlined exceptionIcon">shopping_bag</span>
-                    <span className="numberOfItems">{cart.length}</span>
+                    <span className="numberOfItems">{count}</span>
                 </div>
             </Link>
             <Outlet />
