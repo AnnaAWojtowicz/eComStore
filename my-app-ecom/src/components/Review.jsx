@@ -1,4 +1,5 @@
 import React from "react";
+import StarRating from "./StarRating";
 
 function Review(props) {
 
@@ -7,7 +8,7 @@ function Review(props) {
         <div className="card3">
             <div>{username}: </div>
             <div className="reviewDescription">"{description}"</div>
-            <div>{rating}</div>
+            <StarRating rating={rating} color="#fdd0d9" />
         </div>
     );
 }

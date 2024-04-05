@@ -228,12 +228,7 @@ h1 {
   margin: auto;
 }
 
-.priceElement {
-  padding: 1rem 0;
-}
-
 .priceElement2 {
-  padding: 1rem 0;
   text-align: right;
 }
 
@@ -243,8 +238,7 @@ h1 {
 }
 
 .price2 {
-  display: flex;
-  justify-content: space-between;
+  font-weight: 600;
 }
 
 .priceTotal {
@@ -258,6 +252,10 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.paragraph {
+  padding: 1rem 0;
 }
 
 button {
@@ -282,14 +280,10 @@ button {
   align-self: center;
 }
 
-.button:hover {
-  background-color: red;
-  color: #36b1bf;
-}
-
 .buttons {
   display: flex;
   justify-content: space-between;
+  padding-top: 2rem;
 }
 
 .form {

@@ -2,7 +2,7 @@ import React from "react";
 
 function Price({ price, discountedPrice, showDiscount }) {
     return (
-        <div>
+        <div className="paragraph">
             {showDiscount ? (
                 discountedPrice < price ?
                     (<div className="priceElement">
@@ -12,9 +12,9 @@ function Price({ price, discountedPrice, showDiscount }) {
                                 sell
                             </span>Discount {Math.ceil(((price - discountedPrice) / price) * 100)}%</span>
                         </div>
-                        <div>${discountedPrice}</div>
+                        <div className="price2">${discountedPrice}</div>
                     </div>
-                    ) : (<div>${price}</div>)
+                    ) : (<div className="price2">${price}</div>)
             ) : (
                 discountedPrice < price ?
                     (<div className="priceElement2">

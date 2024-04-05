@@ -5,6 +5,8 @@ import Price from "./Price";
 import Product from "./Product";
 import Button from "./Button";
 import Review from "./Review";
+import StarRating from "./StarRating";
+
 
 
 
@@ -43,9 +45,12 @@ function ProductDetails({ products }) {
                 <div className="title">{product.title}</div>
                 <div className="productDescription">{product.description}</div>
                 <img src={url} alt={alt} />
-                <Price price={product.price} discountedPrice={product.discountedPrice} showDiscount />
-                <div>{product.rating}</div>
-                <div>{tags.join(", ")}</div>
+                <div className="paragraph">
+                    <Price price={product.price} discountedPrice={product.discountedPrice} showDiscount />
+                    <StarRating rating={product.rating} color="#037f8c" />
+                    {/* <div>{product.rating}</div> */}
+                    {/* <div className="paragraph">{tags.join(", ")}</div> */}
+                </div>
                 {product.reviews && product.reviews.map(({ id, username, description, rating }) => {
                     return <Review key={id} username={username} description={description} rating={rating} />
                 })
