@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import CartContext from './CartContext';
+import Context from './Context';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './layout/Layout';
 import Footer from './layout/Footer';
@@ -57,7 +57,7 @@ function App() {
 
 
   return (
-    <CartContext.Provider value={{ cart, setCart, filteredObjects, setFilteredObjects }}>
+    <Context.Provider value={{ cart, setCart, filteredObjects, setFilteredObjects }}>
       <BrowserRouter>
         <div className="content">
           <Header cart={cart} objects={objects} productsData={productsData} setFilteredObjects={setFilteredObjects} />
@@ -74,7 +74,7 @@ function App() {
         </div>
         <Footer />
       </BrowserRouter>
-    </CartContext.Provider>
+    </Context.Provider>
   );
 }
 

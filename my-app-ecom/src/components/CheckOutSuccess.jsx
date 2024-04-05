@@ -1,11 +1,11 @@
 import React, { useContext, useEffect } from "react";
-import CartContext from "./CartContext";
+import Context from "./Context";
 import { Link } from "react-router-dom";
 import Success from "./Success";
 import Button from "./Button";
 
 function CheckOutSuccess() {
-    const { setCart, setFilteredObjects } = useContext(CartContext);
+    const { setCart, setFilteredObjects } = useContext(Context);
 
     const clearCartAndSearch = () => {
         setCart([]);

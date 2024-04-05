@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import CartContext from "./CartContext";
+import Context from "./Context";
 import Price from "./Price";
 import Product from "./Product";
 import Button from "./Button";
@@ -11,7 +11,7 @@ import Review from "./Review";
 function ProductDetails({ products }) {
     const { id } = useParams();
     const [product, setProduct] = useState(null);
-    const { cart, setCart } = React.useContext(CartContext);
+    const { cart, setCart } = React.useContext(Context);
 
     useEffect(() => {
         if (products && products.data) {

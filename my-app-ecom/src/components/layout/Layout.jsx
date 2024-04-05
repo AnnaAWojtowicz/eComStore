@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Outlet, Link } from "react-router-dom";
-import CartContext from "../CartContext";
+import Context from "../Context";
 
 
 
@@ -10,7 +10,7 @@ function Header({ cart, objects, productsData }) {
     // const [filteredObjects, setFilteredObjects] = useState(objects);
     const count = cart.length;
     const [isSearching, setIsSearching] = useState(false);
-    const { setFilteredObjects } = useContext(CartContext);
+    const { setFilteredObjects } = useContext(Context);
 
     // const handleSearch = () => {
     //     const results = productsData.filter((product) => {
