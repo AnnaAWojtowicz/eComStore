@@ -1,72 +1,15 @@
-import React, { useState, useEffect, useContext } from "react";
-import { Outlet, Link } from "react-router-dom";
-import Context from "../Context";
+import React from 'react';
+import Header from './Header';
+import Footer from './Footer';
 
-
-
-function Header({ cart, objects, productsData }) {
-
-    const [searchTerm, setSearchTerm] = useState("");
-    // const [filteredObjects, setFilteredObjects] = useState(objects);
-    const count = cart.length;
-    const [isSearching, setIsSearching] = useState(false);
-    const { setFilteredObjects } = useContext(Context);
-
-    // const handleSearch = () => {
-    //     const results = productsData.filter((product) => {
-    //         return product.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    //             product.description.toLowerCase().includes(searchTerm.toLowerCase());
-    //     });
-    //     setFilteredObjects(results);
-    //     setIsSearching(true);
-    // };
-
-    // useEffect(() => {
-    //     if (searchTerm === "") {
-    //         setIsSearching(false);
-    //     }
-    // }, [searchTerm]);
-
-    useEffect(() => {
-        if (searchTerm === "") {
-            setIsSearching(false);
-        } else {
-            const results = productsData.filter((product) => {
-                return product.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                    product.description.toLowerCase().includes(searchTerm.toLowerCase());
-            });
-            setFilteredObjects(results);
-            setIsSearching(true);
-        }
-    }, [searchTerm]);
-
-
-
-
+function Layout({ children, cart, objects, productsData, setFilteredObjects }) {
     return (
-        <header className="header">
-            <div className="bungee-outline-regular"><Link className="link" to="/">Ecom</Link></div>
-            <div className="searchContainer">
-                <input
-                    type="text"
-                    className="searchInput"
-                    placeholder="Search"
-                    value={searchTerm}
-                    onChange={(event) => setSearchTerm(event.target.value)} />
-                {/* <button className="searchButton" onClick={handleSearch}><span className="material-symbols-outlined">
-                    search
-                </span></button> */}
-            </div>
-
-            <Link className="link" to="/cart">
-                <div className="CartAndNumber">
-                    <span className="material-symbols-outlined exceptionIcon">shopping_bag</span>
-                    <span className="numberOfItems">{count}</span>
-                </div>
-            </Link>
-            <Outlet />
-        </header>
+        <div className="layout">
+            <Header cart={cart} objects={objects} productsData={productsData} setFilteredObjects={setFilteredObjects} />
+            <div className="content"> {children} </div>
+            <Footer />
+        </div>
     );
 }
 
-export default Header;
+export default Layout;

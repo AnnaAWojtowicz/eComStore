@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Context from './Context';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Header from './layout/Layout';
+import Layout from './layout/Layout';
+import Header from './layout/Header';
 import Footer from './layout/Footer';
 import { getProducts } from '../api';
 import Home from './Home';
@@ -59,20 +60,20 @@ function App() {
   return (
     <Context.Provider value={{ cart, setCart, filteredObjects, setFilteredObjects }}>
       <BrowserRouter>
-        <div className="content">
-          <Header cart={cart} objects={objects} productsData={productsData} setFilteredObjects={setFilteredObjects} />
-          <Routes>
-            <Route path="/" element={<Home products={productsData} isSearching={isSearching} filteredObjects={filteredObjects} />} index />
-            <Route path="/ProductDetails/:id" element={<ProductDetails products={products} />} />
-            <Route path='/cartItem' element={<CartItem />} />
-            <Route path="/cart" element={<Cart key={cart.length} items={cart} />} />
-            <Route path="/checkout" element={<CheckOutSuccess />} />
-            <Route path="/contact" element={<ContactForm />} />
-            <Route path="/success" element={<Success />} />
-            <Route path="/contactSuccess" element={<ContactSuccess />} />
-          </Routes>
+        <div className='site'>
+          <Layout cart={cart} objects={objects} productsData={productsData} setFilteredObjects={setFilteredObjects}>
+            <Routes>
+              <Route path="/" element={<Home products={productsData} isSearching={isSearching} filteredObjects={filteredObjects} />} index />
+              <Route path="/ProductDetails/:id" element={<ProductDetails products={products} />} />
+              <Route path='/cartItem' element={<CartItem />} />
+              <Route path="/cart" element={<Cart key={cart.length} items={cart} />} />
+              <Route path="/checkout" element={<CheckOutSuccess />} />
+              <Route path="/contact" element={<ContactForm />} />
+              <Route path="/success" element={<Success />} />
+              <Route path="/contactSuccess" element={<ContactSuccess />} />
+            </Routes>
+          </Layout>
         </div>
-        <Footer />
       </BrowserRouter>
     </Context.Provider>
   );
