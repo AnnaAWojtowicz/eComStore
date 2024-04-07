@@ -21,7 +21,17 @@ Since _Ecom_ is a school project that was handed in whinin a certain deadline, t
 
 ## How to Install and Run the project
 
-Clone and open repository: https://github.com/AnnaAWojtowicz/CommunityScienceMuseum.
+```
+git clone https://github.com/AnnaAWojtowicz/eComStore
+
+cd eComStore
+
+cd my-app-ecom
+
+npm install
+
+npm start
+```
 
 ## Contributing
 
