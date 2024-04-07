@@ -18,7 +18,6 @@ function ContactForm() {
                     <Input placeholder="Email" type="email" id="email" name="email" />
                     <Input placeholder="Subject" type="text" id="subject" name="subject" validate />
                     <Input placeholder="Message" type="textarea" id="message" name="message" validate />
-
                     <div className='buttons'>
                         <Link to="/"><Button type="button" name="Go back" /></Link>
                         <Button type="button" type="submit" name="Send" />

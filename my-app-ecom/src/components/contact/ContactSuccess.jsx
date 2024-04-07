@@ -1,5 +1,5 @@
 import React from "react";
-import Success from "./Success";
+import Success from "../Success";
 
 
 function ContactSuccess() {

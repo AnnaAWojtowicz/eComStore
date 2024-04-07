@@ -8,7 +8,7 @@ function Price({ price, discountedPrice, showDiscount }) {
                     (<div className="priceElement">
                         <div className="price">
                             <span><s>${price}</s></span>
-                            <span className="discount"><span class="material-symbols-outlined">
+                            <span className="discount"><span className="material-symbols-outlined">
                                 sell
                             </span>Discount {Math.ceil(((price - discountedPrice) / price) * 100)}%</span>
                         </div>
@@ -28,6 +28,5 @@ function Price({ price, discountedPrice, showDiscount }) {
         </div>
     );
 }
-
 
 export default Price;

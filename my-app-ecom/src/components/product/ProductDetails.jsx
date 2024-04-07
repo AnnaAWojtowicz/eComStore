@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import Context from "./Context";
-import Price from "./Price";
-import Product from "./Product";
-import Button from "./Button";
+import Context from "../Context";
+import Price from "../Price";
+import Button from "../Button";
 import Review from "./Review";
 import StarRating from "./StarRating";
-
-
 
 
 function ProductDetails({ products }) {
@@ -24,17 +21,13 @@ function ProductDetails({ products }) {
     }, [products, id]);
 
     const addToCart = () => {
-
         if (product) {
             setCart([...cart, product]);
         }
     };
-
     if (!product) {
         return <div>Loading...</div>;
     }
-
-
 
     const { url, alt } = product.image;
     const tags = product.tags;
@@ -48,7 +41,6 @@ function ProductDetails({ products }) {
                 <div className="paragraph">
                     <Price price={product.price} discountedPrice={product.discountedPrice} showDiscount />
                     <StarRating rating={product.rating} color="#037f8c" />
-                    {/* <div>{product.rating}</div> */}
                     {/* <div className="paragraph">{tags.join(", ")}</div> */}
                 </div>
                 {product.reviews && product.reviews.map(({ id, username, description, rating }) => {
@@ -59,7 +51,6 @@ function ProductDetails({ products }) {
                     <Link to="/"><Button type="button" name="Go back" /></Link>
                     <Button type="button" name="Add to cart" onClick={addToCart} />
                 </div>
-
             </div>
         </div>
     );

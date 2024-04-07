@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Price from "./Price";
-import Button from "./Button";
+import Price from "../Price";
+import Button from "../Button";
 
 
 function Product(props) {

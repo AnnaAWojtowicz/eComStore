@@ -1,8 +1,6 @@
 import React, { useContext, useEffect } from "react";
-import Context from "./Context";
-import { Link } from "react-router-dom";
-import Success from "./Success";
-import Button from "./Button";
+import Context from "../Context";
+import Success from "../Success";
 
 function CheckOutSuccess() {
     const { setCart, setFilteredObjects } = useContext(Context);

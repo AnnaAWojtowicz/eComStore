@@ -1,13 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import CartItem from './CartItem';
-import Price from './Price';
-import Product from './Product';
-import Button from './Button';
-import CheckOutForm from './CheckOutSuccess';
-
-
-
+import Button from '../Button';
 
 
 function Cart({ items }) {

@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from "react";
-import Product from "./Product";
-//import productsData from "../data/productsData";
+import Product from "./product/Product";
 import { getProducts } from '../api';
 
-// const products = await getProducts()
-// productsData = products.data;
 
 function Home({ products, isSearching, filteredObjects }) {
-
     const [productsData, setProductsData] = useState([]);
 
     useEffect(() => {
@@ -22,7 +18,6 @@ function Home({ products, isSearching, filteredObjects }) {
     if (filteredObjects.length > 0) {
         itemsToDisplay = filteredObjects;
     }
-
 
     return (
         <div className='container'>
