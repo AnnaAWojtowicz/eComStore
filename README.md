@@ -14,10 +14,11 @@ Since _Ecom_ is a school project that was handed in whinin a certain deadline, t
 
 ## Built With
 
-- React;
-- JS;
-- HTML;
-- CSS.
+- HTML,
+- CSS,
+- JS,
+- React,
+- Bootstrap.
 
 ## How to Install and Run the project
 
@@ -40,6 +41,8 @@ Feel free to contribute to this project, however, remeber to write your name in 
 ## Credits
 
 ## Sources
+
+Noroff (n.a.). _Course Assignment_. Retrieved 07.04.2024 from: https://content.noroff.dev/front-end-frameworks/ca.html.
 
 MdnWebDocs (n.a.). _React._ Retrieved 07.04.2024 from: https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/React_getting_started;
 
